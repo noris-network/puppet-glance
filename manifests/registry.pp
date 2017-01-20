@@ -219,17 +219,17 @@ class glance::registry(
     } else {
       $service_ensure = 'stopped'
     }
+    service { 'glance-registry':
+      ensure     => $service_ensure,
+      name       => $::glance::params::registry_service_name,
+      enable     => $enabled,
+      hasstatus  => true,
+      hasrestart => true,
+      tag        => 'glance-service',
+    }
   } else {
     warning('Execution of db_sync does not depend on $manage_service or $enabled anymore. Please use sync_db instead.')
   }
 
-  service { 'glance-registry':
-    ensure     => $service_ensure,
-    name       => $::glance::params::registry_service_name,
-    enable     => $enabled,
-    hasstatus  => true,
-    hasrestart => true,
-    tag        => 'glance-service',
-  }
 
 }
