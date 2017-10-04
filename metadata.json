@@ -1,6 +1,6 @@
 {
   "name": "openstack-glance",
-  "version": "9.5.0",
+  "version": "9.6.0",
   "author": "Puppet Labs and OpenStack Contributors",
   "summary": "Puppet module for OpenStack Glance",
   "license": "Apache-2.0",
@@ -58,6 +58,10 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">=4.2.0 <5.0.0"
+    },
+    {
+      "name": "openstack/swift",
+      "version_requirement": ">=9.4.0 <10.0.0"
     },
     {
       "name": "openstack/openstacklib",
